@@ -11,6 +11,7 @@ O banco de dados é gerado como localhost, o front-end é o proprio template ger
 Entity Framework
 SQLServer
 SQLServer Management Studio
+BootStrap
 
-## Desenvolvedor:
+## Desenvolvedor
 <p> Elifio Silva Junior </p>
