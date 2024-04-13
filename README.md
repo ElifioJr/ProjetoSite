@@ -7,11 +7,11 @@ Projeto com base em estudo da liguagem , vinculação com banco de dados SQL uti
 O banco de dados é gerado como localhost, o front-end é o proprio template gerado pelo VisualStudio.
 
 ## Técnologias Utilizadas no projeto:
-.NET 8.0
-Entity Framework
-SQLServer
-SQLServer Management Studio
-BootStrap
+<p>.NET 8.0
+<p>Entity Framework
+<p>SQLServer
+<p>SQLServer Management Studio
+<p>BootStrap
 
 ## Desenvolvedor
 <p> Elifio Silva Junior </p>
