@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using ProjetoSite.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +10,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AplicativoDBContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("StudentsPortal")));
+
 
 var app = builder.Build();
 

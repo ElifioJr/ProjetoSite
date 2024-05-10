@@ -12,7 +12,7 @@ using ProjetoSite.Data;
 namespace ProjetoSite.Migrations
 {
     [DbContext(typeof(AplicativoDBContext))]
-    [Migration("20240403184523_Initial")]
+    [Migration("20240501135703_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -24,6 +24,37 @@ namespace ProjetoSite.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("ProjetoSite.Models.Entities.Fornecedor", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CNPJ")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NomeFantasia")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Fornecedores");
+                });
 
             modelBuilder.Entity("ProjetoSite.Models.Entities.Student", b =>
                 {
