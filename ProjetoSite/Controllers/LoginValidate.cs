@@ -19,11 +19,11 @@ namespace ProjetoSite.Controllers {
         [HttpPost]
         public IActionResult Login(string ValidarUsuario) {
             try {
-                // Consulta o banco de dados para verificar se o fornecedor com o CNPJ informado existe
+                
                 var fornecedor = _dbContext.Fornecedores.FirstOrDefault(x => x.Email == ValidarUsuario);
 
                 if(fornecedor != null) {
-                    // Redireciona para a action "Login" do controller "Fornecedor" passando o CNPJ como parâmetro
+                    
                     ViewBag.LoginBemSucedido = "Login Efetuado com sucesso";
                     return View("IndexLogin","LoginValidate");
                 }
