@@ -32,7 +32,7 @@ namespace ProjetoSite.Controllers {
             await dbContext.Fornecedores.AddAsync(fornecedor);
             await dbContext.SaveChangesAsync();
 
-            return RedirectToAction("Login","Fornecedor");
+            return RedirectToAction("List","Fornecedor");
         }
         [HttpGet]
         public async Task<IActionResult> List() {
@@ -55,10 +55,11 @@ namespace ProjetoSite.Controllers {
                 fornecedor.Email = viewModel.Email;
                 fornecedor.Phone = viewModel.Phone;
                 fornecedor.NomeFantasia = viewModel.NomeFantasia;
+                fornecedor.CNPJ = viewModel.CNPJ;
 
                 await dbContext.SaveChangesAsync();
             }
-            return RedirectToAction("FormularioReadOnly","Fornecedor");
+            return View("Login");
         }
 
         [HttpPost]
@@ -68,7 +69,7 @@ namespace ProjetoSite.Controllers {
                 dbContext.Fornecedores.Remove(viewModel);
                 await dbContext.SaveChangesAsync();
             }
-            return RedirectToAction("FormularioReadOnly","Fornecedor");
+            return RedirectToAction("List", "Fornecedor");
         }
 
         public async Task<IActionResult> Login() {
