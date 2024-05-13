@@ -4,3 +4,13 @@
 @{
 }
 <h1>Teste de retorno tela de login</h1>
+@if(TempData["mensagemError"] != null) {
+    <div class="field-error">
+        @TempData["mensagemError"]
+    </div>
+}
+@if(TempData["mensagemOk"] != null) {
+    <div class="field-error">
+        @TempData["mensagemOk"]
+    </div>
+}

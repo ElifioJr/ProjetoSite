@@ -23,12 +23,12 @@ namespace ProjetoSite.Controllers {
                 var fornecedor = _dbContext.Fornecedores.FirstOrDefault(x => x.Email == ValidarUsuario);
 
                 if(fornecedor != null) {
-                    
-                    ViewBag.LoginBemSucedido = "Login Efetuado com sucesso";
+
+                    TempData["mensagemOK"] = "Login bem sucedido";
                     return View("IndexLogin","LoginValidate");
                 }
                 else {
-                    ViewBag.ErrorMessage = "Fornecedor não encontrado.";
+                    TempData["mensagemError"] = "Usuario nao encontrado";
                     return View("IndexLogin","LoginValidate");
                 }
             }
